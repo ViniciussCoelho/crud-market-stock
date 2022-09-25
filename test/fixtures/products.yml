@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  quantity: 1
+  expiration_date: 2022-09-24
+  price: 9.99
+  category: one
+  brand: one
+
+two:
+  name: MyString
+  quantity: 1
+  expiration_date: 2022-09-24
+  price: 9.99
+  category: two
+  brand: two

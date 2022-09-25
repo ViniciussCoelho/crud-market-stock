@@ -1,0 +1,14 @@
+= simple_form_for @order, data: {submits_to_ajax_modal: true} do |f|
+  .form-group
+    = f.input :quantity, label: "Quantidade", input_html: {class: "form-control"}
+  .form-group
+    = f.input :total, label: "Total", input_html: {class: "form-control"}
+  .form-group
+    Data de validade
+    = f.text_field :order_date, "data-provide" => 'datepicker', class: "form-control"
+  .form-group
+    = f.input :product_id, label: "Produto", collection: Product.all, input_html: {class: "form-control"}
+  .form-group
+    = f.input :supplier_id, label: "Fornecedor", collection: Supplier.all, input_html: {class: "form-control"}
+  .actions
+    = f.button :submit, "Salvar", class: 'btn btn-primary'

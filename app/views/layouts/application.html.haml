@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Mercado
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    %nav.navbar.navbar-expand-lg
+      %a.navbar-brand{:href => "#"} Stock.
+      #navbarSupportedContent.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item
+            %a.nav-link{:href => "/products"} Produtos
+          %li.nav-item
+            %a.nav-link{:href => "/categories"} Categorias
+          %li.nav-item
+            %a.nav-link{:href => "/brands"} Marcas
+          %li.nav-item
+            %a.nav-link{:href => "/suppliers"} Fornecedores
+          %li.nav-item
+            %a.nav-link{:href => "/orders"} Pedidos
+    - flash.each do |type, msg|
+      .alert.alert-info
+        = msg
+    = yield
+  = render 'ajax_modal_rails/frame'

@@ -1,0 +1,31 @@
+.table-container
+  .table-information
+    %h1.table-title Produtos
+    .table-actions
+      = link_to 'Adicionar produto', new_product_path, class: "new-button btn btn-success text-light", data: {loads_in_ajax_modal: true}
+  .table-responsive
+    %table.table.table-hover
+      %thead
+        %tr
+          %th.col-2 ID
+          %th.col-2 Nome
+          %th.col-2 Quantidade
+          %th.col-2 Data de validade
+          %th.col-2 Preço
+          %th.col-2 Categoria
+          %th.col-2 Marca
+          %th.col-2 Ações
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td= product.id
+            %td= product.name
+            %td= product.quantity
+            %td= product.expiration_date
+            %td= product.price
+            %td= product.category_id
+            %td= product.brand_id
+            %td
+              .actions
+                = link_to 'Editar', edit_product_path(product), class: "btn btn-warning text-light", data: {loads_in_ajax_modal: true}
+                = link_to 'Apagar', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-light"

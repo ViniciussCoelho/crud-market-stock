@@ -1,0 +1,9 @@
+= simple_form_for @supplier, data: {submits_to_ajax_modal: true} do |f|
+  .form-group
+    = f.input :name, label: "Nome", input_html: {class: "form-control"}
+  .form-group
+    = f.input :city, label: "Cidade", input_html: {class: "form-control"}
+  .form-group
+    = f.input :phone, label: "Telefone", input_html: {class: "form-control"}
+  .actions
+    = f.button :submit, "Salvar", class: 'btn btn-primary'

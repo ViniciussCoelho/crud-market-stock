@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Quantity:
+  = @order.quantity
+%p
+  %strong Total:
+  = @order.total
+%p
+  %strong Order date:
+  = @order.order_date
+%p
+  %strong Product:
+  = @order.product_id
+%p
+  %strong Supplier:
+  = @order.supplier_id
+= link_to 'Edit', edit_order_path(@order)
+|
+= link_to 'Back', orders_path

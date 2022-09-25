@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @product.name
+%p
+  %strong Quantity:
+  = @product.quantity
+%p
+  %strong Expiration date:
+  = @product.expiration_date
+%p
+  %strong Price:
+  = @product.price
+%p
+  %strong Category:
+  = @product.category_id
+%p
+  %strong Brand:
+  = @product.brand_id
+= link_to 'Edit', edit_product_path(@product)
+|
+= link_to 'Back', products_path

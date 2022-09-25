@@ -1,0 +1,29 @@
+.table-container
+  .table-information
+    %h1.table-title Pedidos
+    .table-actions
+      = link_to 'Adicionar Pedido', new_order_path, class: "new-button btn btn-success text-light", data: {loads_in_ajax_modal: true}
+  .table-responsive
+    %table.table.table-hover
+      %thead
+        %tr
+          %th ID
+          %th Quantidade
+          %th Total
+          %th Data
+          %th Produto
+          %th Fornecedor
+          %th Ações
+      %tbody
+        - @orders.each do |order|
+          %tr
+            %td= order.id
+            %td= order.quantity
+            %td= order.total
+            %td= order.order_date
+            %td= order.product_id
+            %td= order.supplier_id
+            %td
+              .actions
+                = link_to 'Editar', edit_order_path(order), class: "btn btn-warning text-light", data: {loads_in_ajax_modal: true}
+                = link_to 'Apagar', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-light"

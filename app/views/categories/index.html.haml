@@ -1,0 +1,21 @@
+.table-container
+  .table-information
+    %h1.table-title Categorias
+    .table-actions
+      = link_to 'Adicionar categoria', new_category_path, class: "new-button btn btn-success text-light", data: {loads_in_ajax_modal: true}
+  .table-responsive
+    %table.table.table-hover
+      %thead
+        %tr
+          %th.col-2 ID
+          %th.col-2 Nome
+          %th.col-1 Ações
+      %tbody
+        - @categories.each do |category|
+          %tr
+            %td= category.id
+            %td= category.name
+            %td
+              .actions
+                = link_to 'Editar', edit_category_path(category), class: "btn btn-warning text-light", data: {loads_in_ajax_modal: true}
+                = link_to 'Apagar', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-light"
