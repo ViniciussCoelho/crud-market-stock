@@ -23,6 +23,13 @@
             %a.nav-link{:href => "/suppliers"} Fornecedores
           %li.nav-item
             %a.nav-link{:href => "/orders"} Pedidos
+          %li.nav-item.dropdown
+            %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
+              Relatórios
+            .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+              %a.dropdown-item{:href => "/reports/order_supplier_report"} Relatório 1
+              %a.dropdown-item{:href => "#"} Relatório 2
+              %a.dropdown-item{:href => "#"} Relatório 3
     - flash.each do |type, msg|
       .alert.alert-info
         = msg

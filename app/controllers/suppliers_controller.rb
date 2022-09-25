@@ -27,11 +27,7 @@ class SuppliersController < ApplicationController
 
     respond_to do |format|
       if @supplier.save
-        format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully created." }
-        format.json { render :show, status: :created, location: @supplier }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @supplier.errors, status: :unprocessable_entity }
+        format.html { redirect_to suppliers_url, notice: "Fornecedor adicionado com sucesso." }
       end
     end
   end
@@ -40,11 +36,7 @@ class SuppliersController < ApplicationController
   def update
     respond_to do |format|
       if @supplier.update(supplier_params)
-        format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully updated." }
-        format.json { render :show, status: :ok, location: @supplier }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @supplier.errors, status: :unprocessable_entity }
+        format.html { redirect_to suppliers_url, notice: "Fornecedor atualizado com sucesso." }
       end
     end
   end
@@ -54,8 +46,7 @@ class SuppliersController < ApplicationController
     @supplier.destroy
 
     respond_to do |format|
-      format.html { redirect_to suppliers_url, notice: "Supplier was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to suppliers_url, notice: "Fornecedor removido com sucesso." }
     end
   end
 
@@ -67,6 +58,6 @@ class SuppliersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def supplier_params
-      params.require(:supplier).permit(:name, :city)
+      params.require(:supplier).permit(:name, :city, :phone)
     end
 end

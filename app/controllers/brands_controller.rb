@@ -27,11 +27,7 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brand.save
-        format.html { redirect_to brand_url(@brand), notice: "Brand was successfully created." }
-        format.json { render :show, status: :created, location: @brand }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @brand.errors, status: :unprocessable_entity }
+        format.html { redirect_to brands_url, notice: "Marca adicionada com sucesso." }
       end
     end
   end
@@ -40,11 +36,7 @@ class BrandsController < ApplicationController
   def update
     respond_to do |format|
       if @brand.update(brand_params)
-        format.html { redirect_to brand_url(@brand), notice: "Brand was successfully updated." }
-        format.json { render :show, status: :ok, location: @brand }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @brand.errors, status: :unprocessable_entity }
+        format.html { redirect_to brands_url, notice: "Marca atualizada com sucesso." }
       end
     end
   end
@@ -54,8 +46,7 @@ class BrandsController < ApplicationController
     @brand.destroy
 
     respond_to do |format|
-      format.html { redirect_to brands_url, notice: "Brand was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to brands_url, notice: "Marca removida com sucesso." }
     end
   end
 
