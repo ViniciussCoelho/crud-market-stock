@@ -5,7 +5,7 @@
     = f.input :quantity, label: "Quantidade", input_html: {class: "form-control"}
   .form-group
     Data de validade
-    = f.text_field :expiration_date, "data-provide" => 'datepicker', class: "form-control"
+    = f.text_field :expiration_date, "data-provide" => 'datepicker', class: "form-control", "data-date-format" => "dd-mm-yyyy"
   .form-group
     = f.input :price, label: "Preço", input_html: {class: "form-control"}
   .form-group

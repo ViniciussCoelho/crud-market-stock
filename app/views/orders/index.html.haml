@@ -20,10 +20,10 @@
             %td= order.id
             %td= order.quantity
             %td= order.total
-            %td= order.order_date
+            %td= order.order_date? ? l(order.order_date, format: :long) : ''
             %td= order.product_id
             %td= order.supplier_id
             %td
               .actions
                 = link_to 'Editar', edit_order_path(order), class: "btn btn-warning text-light", data: {loads_in_ajax_modal: true}
-                = link_to 'Apagar', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-light"
+                = link_to 'Apagar', order, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger text-light"

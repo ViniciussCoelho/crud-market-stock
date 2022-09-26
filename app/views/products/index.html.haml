@@ -21,11 +21,11 @@
             %td= product.id
             %td= product.name
             %td= product.quantity
-            %td= product.expiration_date
+            %td= product.expiration_date? ? l(product.expiration_date, format: :long) : ''
             %td= product.price
             %td= product.category_id
             %td= product.brand_id
             %td
               .actions
                 = link_to 'Editar', edit_product_path(product), class: "btn btn-warning text-light", data: {loads_in_ajax_modal: true}
-                = link_to 'Apagar', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-light"
+                = link_to 'Apagar', product, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger text-light"
