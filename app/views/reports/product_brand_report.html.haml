@@ -1,0 +1,14 @@
+.table-container
+  .table-information
+    %h1.table-title Relatório de produtos e suas respectivas marcas
+  .table-responsive
+    %table.table.table-hover
+      %thead
+        %tr
+          %th.col-2 Nome do produto
+          %th.col-2 Marca do produto
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td= product.name
+            %td= product.brand_name

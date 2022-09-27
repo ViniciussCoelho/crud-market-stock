@@ -10,7 +10,7 @@
     = javascript_include_tag 'application'
   %body
     %nav.navbar.navbar-expand-lg
-      %a.navbar-brand{:href => "#"} Stock.
+      %a.navbar-brand{:href => "/"} Stock.
       #navbarSupportedContent.navbar-collapse
         %ul.navbar-nav.mr-auto
           %li.nav-item
@@ -28,8 +28,8 @@
               Relatórios
             .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
               %a.dropdown-item{:href => "/reports/order_supplier_report"} Relatório 1
-              %a.dropdown-item{:href => "#"} Relatório 2
-              %a.dropdown-item{:href => "#"} Relatório 3
+              %a.dropdown-item{:href => "/reports/product_order_report"} Relatório 2
+              %a.dropdown-item{:href => "/reports/product_brand_report"} Relatório 3
     - flash.each do |type, msg|
       .alert.alert-info
         = msg

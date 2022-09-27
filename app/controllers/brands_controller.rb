@@ -28,6 +28,8 @@ class BrandsController < ApplicationController
     respond_to do |format|
       if @brand.save
         format.html { redirect_to brands_url, notice: "Marca adicionada com sucesso." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
@@ -37,6 +39,8 @@ class BrandsController < ApplicationController
     respond_to do |format|
       if @brand.update(brand_params)
         format.html { redirect_to brands_url, notice: "Marca atualizada com sucesso." }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end

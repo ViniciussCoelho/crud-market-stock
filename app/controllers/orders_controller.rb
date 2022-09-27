@@ -28,10 +28,8 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         format.html { redirect_to orders_url, notice: "Pedido adicionado com sucesso." }
-        format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,10 +39,8 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to orders_url, notice: "Pedido atualizado com sucesso." }
-        format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,7 +51,6 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to orders_url, notice: "Pedido removido com sucesso." }
-      format.json { head :no_content }
     end
   end
 

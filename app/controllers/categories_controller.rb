@@ -29,6 +29,8 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.save
         format.html { redirect_to categories_url, notice: "Categoria adicionada com sucesso." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
@@ -38,6 +40,8 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to categories_url, notice: "Categoria atualizada com sucesso." }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end

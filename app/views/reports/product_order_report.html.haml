@@ -1,0 +1,16 @@
+.table-container
+  .table-information
+    %h1.table-title Relatório da quantidade de cada produto nos pedidos
+  .table-responsive
+    %table.table.table-hover
+      %thead
+        %tr
+          %th.col-2 Nome do produto
+          %th.col-2 Quantidade do item no pedido
+          %th.col-2 Data do pedido
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td= product.name
+            %td= product.order_quantity
+            %td= product.order_date

@@ -4,10 +4,10 @@ class ReportsController < ApplicationController
   end
 
   def product_order_report
-    @products = Products.select("products.name, sum(orders.quantity) as total_quantity").joins(:product).group("products.name").order("total_quantity desc")
+    @products = Product.select("products.name, orders.quantity as order_quantity, orders.order_date as order_date").joins(:orders)
   end
 
   def product_brand_report
-    @products = Product.select("products.name, brands.name").joins(:brand).order("products.name")
+    @products = Product.select("products.name, brands.name as brand_name").joins(:brand).order("products.name")
   end
 end

@@ -28,6 +28,8 @@ class SuppliersController < ApplicationController
     respond_to do |format|
       if @supplier.save
         format.html { redirect_to suppliers_url, notice: "Fornecedor adicionado com sucesso." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
@@ -37,6 +39,8 @@ class SuppliersController < ApplicationController
     respond_to do |format|
       if @supplier.update(supplier_params)
         format.html { redirect_to suppliers_url, notice: "Fornecedor atualizado com sucesso." }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end

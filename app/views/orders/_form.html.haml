@@ -4,8 +4,13 @@
   .form-group
     = f.input :total, label: "Total", input_html: {class: "form-control"}
   .form-group
-    Data de validade
+    %label{class: "#{'field_with_errors' if @order.errors[:order_date].any?}"}
+      %abbr{title: "required"} *
+      Data do pedido
     = f.text_field :order_date, "data-provide" => 'datepicker', class: "form-control", "data-date-format" => "dd-mm-yyyy"
+    - if @order.errors[:order_date].any?
+      .field_with_errors
+        = @order.errors[:order_date].join(", ")
   .form-group
     = f.input :product_id, label: "Produto", collection: Product.all, input_html: {class: "form-control"}
   .form-group
