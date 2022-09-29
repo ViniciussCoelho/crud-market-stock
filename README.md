@@ -21,21 +21,21 @@ Esse projeto é um CRUD básico para um trabalho da faculdade. Ele é feito em R
     1. Abra um terminal e digite: `sudo apt-get update`
     2. Depois de executado, digite o comando: `sudo apt-get install git`
     3. Por fim, configure as suas credenciais que usa no github:
-      `git config --global user.name "Seu nome"`
+      * `git config --global user.name "Seu nome"`
       
-      `git config --global user.email "exemplo@seuemail.com.br"`
+      * `git config --global user.email "exemplo@seuemail.com.br"`
   
   * Docker: 
     1. Instale os pacotes necessários com: `sudo apt install apt-transport-https ca-certificates curl software-properties-common`
     2. e adicionei o repositório do docker no apt do linux da seguinte forma:
-      `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
-      `sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"`
+      * `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+      * `sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"`
     3. Atualize os pacotes recém adicionados com: sudo apt update
     4. e finalmente instale o docker: `sudo apt install docker-ce`
     
   * Docker-compose:
     1. Instale com o comando abaixo:
-    `sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+     * `sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
     2. E depois torne-o executável: `sudo chmod +x /usr/local/bin/docker-compose`
 
 # COMO EXECUTAR
