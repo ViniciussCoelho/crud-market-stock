@@ -47,7 +47,7 @@ Esse projeto é um CRUD básico para um trabalho da faculdade. Ele é feito em R
 
 * Agora seguiremos com a execução da aplicação:
   1. Caso vá utilizar o git para baixar o projeto abra um terminal onde quer que o projeto fique e digite: `git clone https://github.com/ViniciussCoelho/crud-market-stock.git`
-  2. Acesse a pasta do projeto: `cd crud-market-stock/`
+  2. Acesse a pasta do projeto: `cd crud-market-stock/` (repetindo, muito importante que o nome da pasta do projeto seja esse para o docker encontra-la)
   3. Digite `sudo make docker para montar o container` (nessa parte pode ocorrer o erro de conflito do postgres que citei acima nas observações, basta seguir os passos e voltar para cá).
   4. Após o container ser montado completamente (os passos executados serão mostrados no terminal), mantenha a aba aberta, e abra uma nova aba no terminal (ainda dentro da pasta do projeto).
   5. Nessa nova aba, digite `sudo make bash` para acessarmos o terminal dentro do container
