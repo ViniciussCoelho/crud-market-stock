@@ -21,7 +21,8 @@ Esse projeto é um CRUD básico para um trabalho da faculdade. Ele é feito em R
     1. Abra um terminal e digite: `sudo apt-get update`
     2. Depois de executado, digite o comando: `sudo apt-get install git`
     3. Por fim, configure as suas credenciais que usa no github:
-      `git config --global user.name "Seu nome"` 
+      `git config --global user.name "Seu nome"`
+      
       `git config --global user.email "exemplo@seuemail.com.br"`
   
   * Docker: 
