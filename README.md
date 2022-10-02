@@ -56,5 +56,7 @@ Esse projeto é um CRUD básico para um trabalho da faculdade. Ele é feito em R
   
   ** Obs: Caso o servidor não suba sozinho, derrube o docker ao apertar CTRL + C no primeiro terminal que abrimos, e suba com o mesmo comando, `sudo docker-compose up`**
   
+  ** Obs 2: O rails cria o banco de dados automaticamente baseado nas migrations, que vão adicionar tudo que precisamos, por isso não há necessidade de executar nenhum dump. Mas caso queira utilizar, basta conectar no banco (utilizei o DBeaver) e executar. **
+  
   Pronto! O app está em pé e rodando!
    
