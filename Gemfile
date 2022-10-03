@@ -74,3 +74,10 @@ gem 'simple_form'
 gem 'bootstrap-datepicker-rails'
 
 gem "tabs_on_rails"
+
+# Execute: rails db:populate
+# https://github.com/ryanb/populator
+gem 'populator'
+
+# https://github.com/stympy/faker
+gem 'faker'

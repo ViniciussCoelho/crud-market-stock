@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.create(name: 'Tecnologia')
+Category.create(name: 'Bebidas')
+Category.create(name: 'Roupas')
+Category.create(name: 'Alimentos')
+
+Brand.create(name: 'Apple')
+Brand.create(name: 'Samsung')
+Brand.create(name: 'LG')
+Brand.create(name: 'Sony')
+Brand.create(name: 'Genérico')
+
+Supplier.create(name: 'Fornecedor 1', city: 'São Paulo', phone: '11 99999-9999')
+Supplier.create(name: 'Fornecedor 2', city: 'Rio de Janeiro', phone: '21 99999-9999')
+Supplier.create(name: 'Fornecedor 3', city: 'Belo Horizonte', phone: '31 99999-9999')
+Supplier.create(name: 'Fornecedor 4', city: 'Curitiba', phone: '41 99999-9999')
+
+Product.create(name: 'iPhone 6', price: 2000, category_id: 1, brand_id: 1, quantity: 10, expiration_date: '2021-12-31')
+Product.create(name: 'iPhone 6 Plus', price: 2500, category_id: 1, brand_id: 1, quantity: 10, expiration_date: '2022-9-25')
+Product.create(name: 'Maçã', price: 2, category_id: 4, brand_id: 5, quantity: 100, expiration_date: '2022-8-12')
+Product.create(name: 'Coca-Cola', price: 3, category_id: 2, brand_id: 5, quantity: 100, expiration_date: '2022-8-12')
+
+Order.create(supplier_id: 1, product_id: 1, quantity: 10, total: 2000, order_date: '2022-9-25')
+Order.create(supplier_id: 2, product_id: 2, quantity: 10, total: 2500, order_date: '2022-9-21')
+Order.create(supplier_id: 3, product_id: 3, quantity: 100, total: 200, order_date: '2021-9-14')
+Order.create(supplier_id: 4, product_id: 4, quantity: 100, total: 300, order_date: '2021-9-02')

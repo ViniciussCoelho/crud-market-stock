@@ -3,25 +3,20 @@ class SuppliersController < ApplicationController
 
   include AjaxModalRails::Controller
 
-  # GET /suppliers or /suppliers.json
   def index
     @suppliers = Supplier.all
   end
 
-  # GET /suppliers/1 or /suppliers/1.json
   def show
   end
 
-  # GET /suppliers/new
   def new
     @supplier = Supplier.new
   end
 
-  # GET /suppliers/1/edit
   def edit
   end
 
-  # POST /suppliers or /suppliers.json
   def create
     @supplier = Supplier.new(supplier_params)
 
@@ -34,7 +29,6 @@ class SuppliersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /suppliers/1 or /suppliers/1.json
   def update
     respond_to do |format|
       if @supplier.update(supplier_params)
@@ -45,22 +39,25 @@ class SuppliersController < ApplicationController
     end
   end
 
-  # DELETE /suppliers/1 or /suppliers/1.json
   def destroy
-    @supplier.destroy
+    begin
+      @supplier.destroy
 
-    respond_to do |format|
-      format.html { redirect_to suppliers_url, notice: "Fornecedor removido com sucesso." }
+      respond_to do |format|
+        format.html { redirect_to suppliers_url, notice: "Fornecedor removido com sucesso." }
+      end
+    rescue ActiveRecord::InvalidForeignKey => e
+      respond_to do |format|
+        format.html { redirect_to suppliers_url, alert: "Não é possível remover um fornecedor que está sendo utilizado em um pedido." }
+      end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_supplier
       @supplier = Supplier.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def supplier_params
       params.require(:supplier).permit(:name, :city, :phone)
     end

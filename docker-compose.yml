@@ -15,6 +15,7 @@ services:
     environment: 
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=crud-market-stock_development
       - POSTGRES_HOST=db
       - REDIS_URL=redis://redis:6379/0
     depends_on:
@@ -24,6 +25,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=crud-market-stock_development
 
 
   
@@ -37,6 +39,7 @@ services:
     environment:
       POSTGRES_USER: crud-market-stock
       POSTGRES_PASSWORD: crud-market-stock
+      POSTGRES_DB: crud-market-stock_development
 
   redis:
     mem_limit: 1Gb

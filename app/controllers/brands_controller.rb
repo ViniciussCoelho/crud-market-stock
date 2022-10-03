@@ -3,25 +3,20 @@ class BrandsController < ApplicationController
 
   include AjaxModalRails::Controller
 
-  # GET /brands or /brands.json
   def index
     @brands = Brand.all
   end
 
-  # GET /brands/1 or /brands/1.json
   def show
   end
 
-  # GET /brands/new
   def new
     @brand = Brand.new
   end
 
-  # GET /brands/1/edit
   def edit
   end
 
-  # POST /brands or /brands.json
   def create
     @brand = Brand.new(brand_params)
 
@@ -34,7 +29,6 @@ class BrandsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /brands/1 or /brands/1.json
   def update
     respond_to do |format|
       if @brand.update(brand_params)
@@ -45,22 +39,25 @@ class BrandsController < ApplicationController
     end
   end
 
-  # DELETE /brands/1 or /brands/1.json
   def destroy
-    @brand.destroy
+    begin
+      @brand.destroy
 
-    respond_to do |format|
-      format.html { redirect_to brands_url, notice: "Marca removida com sucesso." }
+      respond_to do |format|
+        format.html { redirect_to brands_url, notice: "Marca removida com sucesso." }
+      end
+    rescue ActiveRecord::InvalidForeignKey => e
+      respond_to do |format|
+        format.html { redirect_to brands_url, alert: "Não é possível remover uma marca que está sendo utilizada em um produto." }
+      end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_brand
       @brand = Brand.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def brand_params
       params.require(:brand).permit(:name)
     end
