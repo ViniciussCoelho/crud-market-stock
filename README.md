@@ -56,7 +56,7 @@ Esse projeto é um CRUD básico para um trabalho da faculdade. Ele é feito em R
   
   * Obs: Caso o servidor não suba sozinho, derrube o docker ao apertar CTRL + C no primeiro terminal que abrimos, e suba com o mesmo comando, `sudo docker-compose up`**
   
-  * Obs 2: O rails cria e popula o banco de dados para gente com os comandos `rails db:create`, `rails db:migrate`, `rails db:seed`. Dessa forma, não há necessidade de utilizar o dump. Mas caso queira, pode pular os comandos de criação do banco e rodar o dump no docker com o seguinte comando:
+  * Obs 2: O rails cria e popula o banco de dados para gente com os comandos `rails db:create`, `rails db:migrate`, `rails db:seed` que usamos anteriormente. Dessa forma, não há necessidade de utilizar o dump. Mas caso queira, pode pular os comandos de criação do banco e rodar o dump no docker com o seguinte comando:
   1. Dentro da pasta do app e com o docker rodando em outra aba, execute o comando `cat dump_db.sql | docker exec -i crud-market-stock_db_1 psql -U postgres`.
   
   Pronto! O app está em pé e rodando!
