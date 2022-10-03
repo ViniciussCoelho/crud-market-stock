@@ -51,12 +51,13 @@ Esse projeto é um CRUD básico para um trabalho da faculdade. Ele é feito em R
   3. Digite `sudo make docker para montar o container` (nessa parte pode ocorrer o erro de conflito do postgres que citei acima nas observações, basta seguir os passos e voltar para cá).
   4. Após o container ser montado completamente (os passos executados serão mostrados no terminal), mantenha a aba aberta, e abra uma nova aba no terminal (ainda dentro da pasta do projeto).
   5. Nessa nova aba, digite `sudo make bash` para acessarmos o terminal dentro do container
-  6. Digite `rails db:create` para criar o banco de dados, e `rails db:migrate` para criar as tabelas do banco.
+  6. Digite `rails db:create` para criar o banco de dados, e `rails db:migrate` para criar as tabelas do banco. Por fim, utilize `rails db:seed` para popular o banco.
   7. Agora, podemos finalmente acessar a aplicação no navegador que preferir pelo link localhost:3000
   
-  ** Obs: Caso o servidor não suba sozinho, derrube o docker ao apertar CTRL + C no primeiro terminal que abrimos, e suba com o mesmo comando, `sudo docker-compose up`**
+  * Obs: Caso o servidor não suba sozinho, derrube o docker ao apertar CTRL + C no primeiro terminal que abrimos, e suba com o mesmo comando, `sudo docker-compose up`**
   
-  ** Obs 2: O rails cria o banco de dados automaticamente baseado nas migrations, que vão adicionar tudo que precisamos, por isso não há necessidade de executar nenhum dump. Mas caso queira utilizar, basta conectar no banco (utilizei o DBeaver) e executar. **
+  * Obs 2: O rails cria e popula o banco de dados para gente com os comandos `rails db:create`, `rails db:migrate`, `rails db:seed`. Dessa forma, não há necessidade de utilizar o dump. Mas caso queira, pode pular os comandos de criação do banco e rodar o dump no docker com o seguinte comando:
+  1. Dentro da pasta do app e com o docker rodando em outra aba, execute o comando `cat dump_db.sql | docker exec -i crud-market-stock_db_1 psql -U postgres`.
   
   Pronto! O app está em pé e rodando!
    
